@@ -1,12 +1,10 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-white.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/logo.svg">
   <img src="assets/logo.svg" alt="\tʁɑ̃.kil\" height="80">
 </picture>
-
-# trankil
 
 **Plugins and themes for [degoog](https://github.com/fccview/degoog) search but with a \tʁɑ̃.kil\ twist.**
 
