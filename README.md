@@ -133,6 +133,41 @@ Shows a [Wikipedia](https://www.wikipedia.org/) summary card when the search que
 
 ---
 
+## Roadmap
+
+- **Responsive** for [trankil](themes/trankil) theme.
+- More **plugins**
+  - **code-snippet**
+    *Code search with syntax highlighting, copy button and execution.*
+  - **company**
+    *Company informations, latest news, founders, creation date, etc.*
+  - **equation-solver**
+    *Solve math equations and plot graphs.*
+  - **function-grapher**
+    *Graph functions directly from the search bar.*
+  - **maps**
+    *Map search and directions using OpenStreetMap (already exists, but improve it with more infos https://github.com/lazerleif/degoog-maps.git).*
+  - **music**
+    *Search for songs, artists and albums with poster previews and links to listening platforms.*
+  - **periodic-table**
+    *Interactive periodic table with element information.*
+  - **recipes**
+    *Recipe search with ingredients, instructions and nutritional information.*
+  - **spell-correction**
+    *Suggest correct spellings for search queries with typos.*
+  - **stocks**
+    *Stock prices, charts and company information, including cryptocurrency.*
+  - **time**
+    *Current time and timezone information for any location in the world.*
+  - **translator**
+    *Language translation powered by a free API or local whisper/LLM.*
+  - **unit-converter**
+    *Convert between various units of measurement (length, weight, temperature, etc.).*
+  - **weather**
+    *Current weather and forecast for any location, using a free API.*
+
+---
+
 ## Thanks
 
 - [fccview](https://github.com/fccview) for building [degoog](https://github.com/fccview/degoog) and the [fccview-degoog-extensions](https://github.com/fccview/fccview-degoog-extensions) ecosystem that makes this possible.
