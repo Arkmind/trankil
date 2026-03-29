@@ -1103,7 +1103,7 @@ button.sidebar-accordion-toggle {
   font-size: var(--font-large);
 }
 
-.sidebar-accordion-toggle:has(.kp-title) {
+.sidebar-accordion:has(.kp-title) {
   display: none;
 }
 
