@@ -43,7 +43,7 @@
             "path": "plugins/tmdb",
             "name": "TMDB",
             "description": "A plugin that provides movie information from The Movie Database.",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "type": "slot"
         }
     ],

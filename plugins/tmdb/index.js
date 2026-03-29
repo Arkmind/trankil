@@ -683,6 +683,7 @@ export const slot = {
   },
 
   async execute(query, ctx) {
+    if (query.length < 6 || query.length > 150) return { html: "" };
     if (!tmdbApiKey) return { html: "" };
 
     const results = ctx?.results;
