@@ -14,7 +14,7 @@ Built for [degoog](https://github.com/fccview/degoog) · Inspired by [fccview-de
 
 ---
 
-## Theme — Trankil
+## Theme - Trankil
 
 A calm \tʁɑ̃.kil\ theme designed for an easy browsing experience.
 
@@ -54,7 +54,7 @@ A simple calculator plugin that evaluates basic math expressions directly from t
 
 ### [Currency](plugins/currency)
 
-Live currency conversion rates — type e.g. `1000 yen to usd` to convert on the fly.
+Live currency conversion rates - type e.g. `1000 yen to usd` to convert on the fly.
 
 <details>
 <summary>Screenshot</summary>
@@ -67,7 +67,7 @@ Live currency conversion rates — type e.g. `1000 yen to usd` to convert on the
 
 ### [Dictionary](plugins/dictionary)
 
-Word definitions, phonetics and part-of-speech — type e.g. `definition tranquille`.
+Word definitions, phonetics and part-of-speech - type e.g. `definition tranquille`.
 
 <details>
 <summary>Screenshot</summary>
@@ -80,7 +80,7 @@ Word definitions, phonetics and part-of-speech — type e.g. `definition tranqui
 
 ### [Lyrics](plugins/lyrics)
 
-Song lyrics fetched inline — type e.g. `kana tranquille lyrics`.
+Song lyrics fetched inline - type e.g. `kana tranquille lyrics`.
 
 <details>
 <summary>Screenshots</summary>
@@ -94,7 +94,7 @@ Song lyrics fetched inline — type e.g. `kana tranquille lyrics`.
 
 ### [Stopwatch](plugins/stopwatch)
 
-Built-in stopwatch and countdown timer — type e.g. `timer 5mn`.
+Built-in stopwatch and countdown timer - type e.g. `timer 5mn`.
 
 <details>
 <summary>Screenshot</summary>
