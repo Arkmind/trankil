@@ -45,6 +45,13 @@
             "description": "A plugin that provides movie information from The Movie Database.",
             "version": "1.0.1",
             "type": "slot"
+        },
+        {
+            "path": "plugins/wikipedia",
+            "name": "Wikipedia",
+            "description": "Shows a Wikipedia summary card when the search query exactly matches an article title (English or French).",
+            "version": "1.0.0",
+            "type": "slot"
         }
     ],
     "themes": [

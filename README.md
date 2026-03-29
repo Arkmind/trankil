@@ -120,6 +120,19 @@ Movie and TV show information powered by [The Movie Database](https://www.themov
 
 ---
 
+### [Wikipedia](plugins/wikipedia)
+
+Shows a [Wikipedia](https://www.wikipedia.org/) summary card when the search query exactly matches an article title.
+
+<details>
+<summary>Screenshots</summary>
+
+![Wikipedia](plugins/wikipedia/screenshots/1.png)
+
+</details>
+
+---
+
 ## Thanks
 
 - [fccview](https://github.com/fccview) for building [degoog](https://github.com/fccview/degoog) and the [fccview-degoog-extensions](https://github.com/fccview/fccview-degoog-extensions) ecosystem that makes this possible.
