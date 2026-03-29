@@ -1,0 +1,135 @@
+<div class="calc-widget" data-initial="{{initialExpr}}">
+  <div class="calc-display">
+    <button
+      class="calc-history-btn"
+      data-action="toggle-history"
+      aria-label="History"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    </button>
+    <div class="calc-display-right">
+      <div class="calc-expr" id="calc-expr"></div>
+      <div class="calc-result" id="calc-result">0</div>
+    </div>
+  </div>
+
+  <div class="calc-history-panel" id="calc-history-panel" style="display: none">
+    <div class="calc-history-list" id="calc-history-list"></div>
+  </div>
+
+  <div class="calc-grid">
+    <div class="calc-row">
+      <div class="button-group">
+        <button
+          class="calc-btn calc-btn--toggle calc-btn--active"
+          data-action="deg"
+          id="calc-deg-btn"
+        >
+          Deg
+        </button>
+        <button
+          class="calc-btn calc-btn--toggle"
+          data-action="rad"
+          id="calc-rad-btn"
+        >
+          Rad
+        </button>
+      </div>
+      <button class="calc-btn calc-btn--sci" data-action="factorial">x!</button>
+      <button class="calc-btn calc-btn--sci" data-action="open-paren">(</button>
+      <button class="calc-btn calc-btn--sci" data-action="close-paren">
+        )
+      </button>
+      <button class="calc-btn calc-btn--sci" data-action="percent">%</button>
+      <button class="calc-btn calc-btn--clear" data-action="clear">AC</button>
+    </div>
+    <div class="calc-row">
+      <button
+        class="calc-btn calc-btn--inv"
+        data-action="inv"
+        id="calc-inv-btn"
+      >
+        Inv
+      </button>
+      <button
+        class="calc-btn calc-btn--sci"
+        data-action="sin"
+        id="calc-sin-btn"
+      >
+        sin
+      </button>
+      <button class="calc-btn calc-btn--sci" data-action="ln" id="calc-ln-btn">
+        ln
+      </button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-7">7</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-8">8</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-9">9</button>
+      <button class="calc-btn calc-btn--op" data-action="divide">÷</button>
+    </div>
+    <div class="calc-row">
+      <button class="calc-btn calc-btn--sci" data-action="pi">π</button>
+      <button
+        class="calc-btn calc-btn--sci"
+        data-action="cos"
+        id="calc-cos-btn"
+      >
+        cos
+      </button>
+      <button
+        class="calc-btn calc-btn--sci"
+        data-action="log"
+        id="calc-log-btn"
+      >
+        log
+      </button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-4">4</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-5">5</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-6">6</button>
+      <button class="calc-btn calc-btn--op" data-action="multiply">×</button>
+    </div>
+    <div class="calc-row">
+      <button class="calc-btn calc-btn--sci" data-action="e">e</button>
+      <button
+        class="calc-btn calc-btn--sci"
+        data-action="tan"
+        id="calc-tan-btn"
+      >
+        tan
+      </button>
+      <button
+        class="calc-btn calc-btn--sci"
+        data-action="sqrt"
+        id="calc-sqrt-btn"
+      >
+        √
+      </button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-1">1</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-2">2</button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-3">3</button>
+      <button class="calc-btn calc-btn--op" data-action="subtract">−</button>
+    </div>
+    <div class="calc-row">
+      <button class="calc-btn calc-btn--sci" data-action="ans">Ans</button>
+      <button class="calc-btn calc-btn--sci" data-action="exp">EXP</button>
+      <button class="calc-btn calc-btn--sci" data-action="power">
+        x<sup>y</sup>
+      </button>
+      <button class="calc-btn calc-btn--digit" data-action="digit-0">0</button>
+      <button class="calc-btn calc-btn--digit" data-action="dot">.</button>
+      <button class="calc-btn calc-btn--equals" data-action="equals">=</button>
+      <button class="calc-btn calc-btn--op" data-action="add">+</button>
+    </div>
+  </div>
+</div>

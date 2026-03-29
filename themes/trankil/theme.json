@@ -1,0 +1,11 @@
+{
+    "name": "trankil",
+    "author": "arky",
+    "description": "A trankil \\tʁɑ̃.kil\\ theme, designed for an easy browsing experience.",
+    "version": "1.0.0",
+    "css": "style.css",
+    "html": {
+        "index": "index.html",
+        "search": "search.html"
+    }
+}

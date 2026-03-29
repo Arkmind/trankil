@@ -1,0 +1,124 @@
+.currency-widget {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  max-width: 704px;
+  color: var(--text-primary);
+  padding: 0 0 8px 0;
+}
+
+.currency-header {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.currency-result {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.currency-meta {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  opacity: 0.75;
+  margin-bottom: 18px;
+}
+
+.currency-inputs {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.currency-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 12px;
+}
+
+.currency-from-input,
+.currency-to-input {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+.currency-from-input::-webkit-outer-spin-button,
+.currency-from-input::-webkit-inner-spin-button,
+.currency-to-input::-webkit-outer-spin-button,
+.currency-to-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.currency-select-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.currency-select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.currency-from-select,
+.currency-to-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-hover, rgba(128, 128, 128, 0.08));
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  padding: 5px 26px 5px 9px;
+  cursor: pointer;
+  outline: none;
+  max-width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: inherit;
+}
+
+.currency-from-select:hover,
+.currency-to-select:hover {
+  border-color: var(--text-secondary);
+}
+
+.currency-loading .currency-from-select,
+.currency-loading .currency-to-select {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.currency-loading .currency-to-input {
+  opacity: 0.4;
+}
+
+.currency-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 0;
+}

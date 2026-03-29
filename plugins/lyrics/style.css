@@ -1,0 +1,159 @@
+.lyrics-widget {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--text-primary);
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.lyrics-header {
+  margin-bottom: 0.75rem;
+}
+
+.lyrics-heading {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* ── Track info ──────────────────────────────────────────── */
+.lyrics-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.lyrics-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.lyrics-artist {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* ── Lyrics lines ────────────────────────────────────────── */
+.lyrics-preview,
+.lyrics-full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.lyrics-preview {
+  margin-bottom: 0.5rem;
+}
+
+.lyrics-line {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+/* ── Expand toggle ───────────────────────────────────────── */
+.lyrics-details {
+  margin-bottom: 0.75rem;
+}
+
+.lyrics-show-all {
+  font-size: 0.875rem;
+  color: var(--link-color);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lyrics-show-all::-webkit-details-marker {
+  display: none;
+}
+
+.lyrics-show-all::after {
+  content: "›";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+details[open] .lyrics-show-all::after {
+  content: "‹";
+}
+
+.lyrics-full {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0.75rem 0 0.25rem;
+  border-top: 1px solid var(--border-light, var(--border-color));
+  margin-top: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-secondary) transparent;
+}
+
+.lyrics-full::-webkit-scrollbar {
+  width: 4px;
+}
+
+.lyrics-full::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+/* ── Source attribution ──────────────────────────────────── */
+.lyrics-source {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.lyrics-source-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.lyrics-source-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Loading / pending state ─────────────────────────────── */
+.lyrics-widget--pending .lyrics-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  min-height: 2rem;
+}
+
+.lyrics-loading-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--link-color);
+  flex-shrink: 0;
+  animation: lyrics-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes lyrics-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}

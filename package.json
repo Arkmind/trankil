@@ -1,0 +1,58 @@
+{
+    "name": "trankil",
+    "description": "Plugins and themes for degoog search but with a \\tʁɑ̃.kil\\ twist.",
+    "repo-image": "https://avatars.githubusercontent.com/u/16468131?v=4",
+    "author": "arky",
+    "plugins": [
+        {
+            "path": "plugins/calculator",
+            "name": "Calculator",
+            "description": "A simple calculator plugin that evaluates basic math expressions.",
+            "version": "1.0.0",
+            "type": "command"
+        },
+        {
+            "path": "plugins/currency",
+            "name": "Currency",
+            "description": "A plugin that provides currency conversion rates.",
+            "version": "1.0.0",
+            "type": "slot"
+        },
+        {
+            "path": "plugins/dictionary",
+            "name": "Dictionary",
+            "description": "A plugin that provides definitions for words.",
+            "version": "1.0.0",
+            "type": "slot"
+        },
+        {
+            "path": "plugins/lyrics",
+            "name": "Lyrics",
+            "description": "A plugin that provides song lyrics.",
+            "version": "1.0.0",
+            "type": "slot"
+        },
+        {
+            "path": "plugins/stopwatch",
+            "name": "Stopwatch",
+            "description": "A plugin that provides a stopwatch functionality.",
+            "version": "1.0.0",
+            "type": "slot"
+        },
+        {
+            "path": "plugins/tmdb",
+            "name": "TMDB",
+            "description": "A plugin that provides movie information from The Movie Database.",
+            "version": "1.0.0",
+            "type": "slot"
+        }
+    ],
+    "themes": [
+        {
+            "path": "themes/trankil",
+            "name": "Trankil",
+            "description": "A trankil \\tʁɑ̃.kil\\ theme, designed for an easy browsing experience.",
+            "version": "1.0.0"
+        }
+    ]
+}

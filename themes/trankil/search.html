@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="trankil - search the web privately." />
+    <link
+      rel="icon"
+      href="/public/favicon/favicon.ico?v=__APP_VERSION__"
+      type="image/x-icon"
+    />
+    <link
+      rel="manifest"
+      href="/public/favicon/site.webmanifest?v=__APP_VERSION__"
+    />
+    <link
+      rel="search"
+      type="application/opensearchdescription+xml"
+      title="trankil"
+      href="/opensearch.xml"
+    />
+    <title>trankil</title>
+    <link rel="stylesheet" href="/theme/style.css?v=__APP_VERSION__" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        var r = document.documentElement;
+        if (t === "light") r.setAttribute("data-theme", "light");
+        else if (t === "dark") r.setAttribute("data-theme", "dark");
+        else {
+          var m = window.matchMedia("(prefers-color-scheme: dark)");
+          r.setAttribute("data-theme", m.matches ? "dark" : "light");
+        }
+      })();
+    </script>
+    __THEME_CSS__ __PLUGIN_ASSETS__
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <div class="header-content container">
+          <div class="header-main">
+            <a class="logo" href="/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="681.448"
+                height="171.111"
+                viewBox="0 0 681.448 171.111"
+                fill="currentColor"
+              >
+                <g
+                  id="Group_3"
+                  data-name="Group 3"
+                  transform="translate(-615.622 -470.689)"
+                >
+                  <path
+                    id="Path_2"
+                    data-name="Path 2"
+                    d="M80.711,36.8H68.889L8.622-132.533H21.067ZM149.178-85.6l-2.756,8.622H118.867v57.333a7.078,7.078,0,0,0,2.933,5.778,19.607,19.607,0,0,0,6.8,3.422,24.613,24.613,0,0,0,6.622,1.111,26.914,26.914,0,0,0,6.089-.756,44.257,44.257,0,0,0,4.933-1.378h1.6v5.511q-1.778,1.067-5.467,2.889A54.319,54.319,0,0,1,133.711.222a37.9,37.9,0,0,1-10.756,1.467A34.91,34.91,0,0,1,110.511-.4,19.875,19.875,0,0,1,101.8-6.489a15.023,15.023,0,0,1-3.2-9.689v-60.8H84.733v-5.156a58.7,58.7,0,0,0,8.044-2.4A11.943,11.943,0,0,0,98.2-88.578q2-2.711,2.267-7.956l.622-10.933,17.778-3.022V-85.6ZM356.115-11.289a12.8,12.8,0,0,1,3.911-9.467,13.022,13.022,0,0,1,9.511-3.867A13.066,13.066,0,0,1,379-20.756a12.729,12.729,0,0,1,3.956,9.467A12.815,12.815,0,0,1,379-1.911a12.917,12.917,0,0,1-9.467,3.956,12.873,12.873,0,0,1-9.511-3.956A12.887,12.887,0,0,1,356.115-11.289ZM399.781,0V-4.711l9.067-2.667a5.4,5.4,0,0,0,2.978-1.867,5.1,5.1,0,0,0,1.022-3.2V-114.489a5.081,5.081,0,0,0-1.2-3.6,10.691,10.691,0,0,0-4.222-2.356l-8.178-2.933v-3.556l33.867-7.378V-43.2L466.8-77.689l-10.667-3.733v-4.711H491.6v4.711L482-78.578a12.89,12.89,0,0,0-3.911,2,26.969,26.969,0,0,0-3.022,2.533L454.893-55.2l30.133,44a10.09,10.09,0,0,0,2.667,2.711,13.917,13.917,0,0,0,4,1.822l6.4,1.956V0H456.137V-4.711l8.444-2.844L441.293-42.489l-8.178,5.244v24.8A4.588,4.588,0,0,0,434.226-9.2a7,7,0,0,0,2.889,1.822l7.467,2.667V0ZM524.6-106.756a12.922,12.922,0,0,1-6.622-1.733,12.937,12.937,0,0,1-4.711-4.667,12.685,12.685,0,0,1-1.733-6.578,12.1,12.1,0,0,1,3.822-8.978,12.746,12.746,0,0,1,9.244-3.733,13.113,13.113,0,0,1,9.467,3.733,12.033,12.033,0,0,1,3.867,8.978,12.441,12.441,0,0,1-1.778,6.578,13.185,13.185,0,0,1-4.8,4.667A13.334,13.334,0,0,1,524.6-106.756ZM501.937,0V-4.711l9.511-2.667a5.337,5.337,0,0,0,2.889-1.778,4.965,4.965,0,0,0,1.111-3.289V-68.356a6.332,6.332,0,0,0-1.2-3.911,8.841,8.841,0,0,0-4.311-2.667l-7.644-2.756v-3.556l33.422-6.667v75.467a4.754,4.754,0,0,0,1.111,3.289,6.138,6.138,0,0,0,2.889,1.778l8.711,2.667V0Zm54.956,0V-4.711l9.067-2.667A5.509,5.509,0,0,0,568.937-9.2a5.059,5.059,0,0,0,1.022-3.244v-101.6A6.7,6.7,0,0,0,568.8-118a7.947,7.947,0,0,0-4.267-2.622l-8.178-2.756v-3.556l33.867-7.378V-12.444a4.753,4.753,0,0,0,1.111,3.289,6.138,6.138,0,0,0,2.889,1.778l8,2.667V0ZM690.07,36.8H678.248L617.981-132.533h12.444Z"
+                    transform="translate(607 605)"
+                  />
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M2.335-72v3.85l8.015,2.335a4.436,4.436,0,0,1,2.114,1.357,3.48,3.48,0,0,1,.852,2.367V5.059a3.607,3.607,0,0,1-.884,2.461A4.128,4.128,0,0,1,10.35,8.845L2.335,11.117v3.85H40.328A62.57,62.57,0,0,0,57.21,13.074,27.287,27.287,0,0,0,67.466,8.056a17.21,17.21,0,0,0,5.112-6.942,21.6,21.6,0,0,0,1.452-7.731,20.786,20.786,0,0,0-3.187-11.865,24.427,24.427,0,0,0-7.794-7.479A37.682,37.682,0,0,0,54.276-29.9L44.62-36.784,30.356-32.871l.5,6a8.746,8.746,0,0,1,2.114-.379q1.736-.189,3.692-.284t2.966-.095a13.3,13.3,0,0,1,8.52,2.651,15.993,15.993,0,0,1,4.986,6.816A23.55,23.55,0,0,1,54.78-9.457q0,9.214-4.228,13.411t-11.928,4.2H31.24V-62.092a3.965,3.965,0,0,1,.726-2.43,3.422,3.422,0,0,1,1.988-1.294l9.34-2.335V-72ZM91.2-72H71a19.077,19.077,0,0,0-6,.757,8.745,8.745,0,0,0-3.755,2.493,39.685,39.685,0,0,0-3.44,4.639L39.066-34.575l15.778,5.743L76.428-60.766a15.836,15.836,0,0,1,3.029-3.092,10.539,10.539,0,0,1,3.6-2.083L91.2-68.15Z"
+                    transform="translate(764 591)"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M27.378,1.778A22.277,22.277,0,0,1,15.333-1.467a22.364,22.364,0,0,1-8.044-8.578A24,24,0,0,1,4.444-21.511,22.908,22.908,0,0,1,8.489-35.289,31.694,31.694,0,0,1,18.756-44.4a48.023,48.023,0,0,1,13.156-5.067,58.768,58.768,0,0,1,12.8-1.556q1.067,0,3.244.178t4.311.356q2.133.178,3.289.178l.089-14.133q.089-8.622-2.489-11.422t-8.978-2.8A22.868,22.868,0,0,0,36.267-77.2a44.188,44.188,0,0,0-7.733,3.733Q24.8-71.2,21.556-68.844t-5.733,4.133H13.333L10.044-80.8a70.815,70.815,0,0,1,8.622-3.733,72.483,72.483,0,0,1,10.756-2.933,64.324,64.324,0,0,1,12.444-1.156A50.03,50.03,0,0,1,57.689-86a28.924,28.924,0,0,1,13.156,8.756q5.244,6.133,5.067,16.8l-.533,45.067A5.163,5.163,0,0,0,77.2-11.244q1.822,1.556,5.556,1.556a21.892,21.892,0,0,0,3.289-.444q2.4-.444,4.267-.889h1.422V-5.6a33.381,33.381,0,0,1-4.978,2.978A52.521,52.521,0,0,1,79.378.444a24.163,24.163,0,0,1-7.644,1.333q-7.378,0-11.911-3.067T55.289-12.711A30.264,30.264,0,0,1,46.044-3.2,29.823,29.823,0,0,1,36.133.844,46.7,46.7,0,0,1,27.378,1.778Zm11.644-12a25.066,25.066,0,0,0,8.8-1.733,15.3,15.3,0,0,0,7.556-6.267l.178-26.311a57.178,57.178,0,0,0-15.822,1.956,21.045,21.045,0,0,0-10.4,6.178q-3.644,4.222-3.644,10.978,0,5.778,2.044,9.111A11.586,11.586,0,0,0,32.844-11.6,14.953,14.953,0,0,0,39.022-10.222Z"
+                    transform="translate(854 605)"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M14.66-22.048,9.517-24a36.231,36.231,0,0,1,2.9-5.7,33.49,33.49,0,0,1,4.345-5.616A21.753,21.753,0,0,1,22.433-39.6,14.5,14.5,0,0,1,29.26-41.26a21.246,21.246,0,0,1,7.6,1.271A42.212,42.212,0,0,1,43-37.092q2.808,1.626,5.5,2.9a13.188,13.188,0,0,0,5.7,1.271A7.685,7.685,0,0,0,60.53-35.88,54.462,54.462,0,0,0,65.5-43.565L70.638-41.5a40.243,40.243,0,0,1-2.985,5.734,33.116,33.116,0,0,1-4.374,5.616,22.486,22.486,0,0,1-5.616,4.256,14.158,14.158,0,0,1-6.768,1.655,21.246,21.246,0,0,1-7.6-1.271,43.592,43.592,0,0,1-6.177-2.9q-2.837-1.626-5.556-2.9a13.381,13.381,0,0,0-5.734-1.271,7.7,7.7,0,0,0-6.354,2.926A49.723,49.723,0,0,0,14.66-22.048Z"
+                    transform="translate(857 527)"
+                  />
+                </g>
+              </svg>
+            </a>
+
+            <div class="search">
+              <form
+                action="/search"
+                method="get"
+                class="search-form"
+                id="search-form-home"
+              >
+                <label class="search-icon-wrap" for="search-input">
+                  <svg
+                    class="search-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                  </svg>
+                </label>
+                <div class="search-bar" id="search-bar-home">
+                  <div class="grow-wrap">
+                    <textarea
+                      class="search-input"
+                      id="search-input"
+                      name="q"
+                      rows="1"
+                      placeholder=""
+                      onInput="this.parentNode.dataset.replicatedValue = this.value"
+                      onKeyDown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();this.form.submit()}"
+                    ></textarea>
+                  </div>
+                </div>
+                <button
+                  class="variant--ghost"
+                  onclick="document.getElementById('search-input').focus()"
+                  type="reset"
+                >
+                  <svg
+                    class="search-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+                <div class="search-icon-wrap">
+                  <hr class="v m-0 py-1" />
+                </div>
+                <button class="variant--ghost">
+                  <svg
+                    class="search-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                  </svg>
+                </button>
+                <div class="ac-dropdown" id="ac-dropdown-home"></div>
+              </form>
+            </div>
+          </div>
+          <div>
+            <a
+              href="/settings"
+              class="header-link"
+              id="nav-settings-top"
+              title="Settings"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12.22 2h-.44a2 2 0 00-2 2v.18a2 2 0 01-1 1.73l-.43.25a2 2 0 01-2 0l-.15-.08a2 2 0 00-2.73.73l-.22.38a2 2 0 00.73 2.73l.15.1a2 2 0 011 1.72v.51a2 2 0 01-1 1.74l-.15.09a2 2 0 00-.73 2.73l.22.38a2 2 0 002.73.73l.15-.08a2 2 0 012 0l.43.25a2 2 0 011 1.73V20a2 2 0 002 2h.44a2 2 0 002-2v-.18a2 2 0 011-1.73l.43-.25a2 2 0 012 0l.15.08a2 2 0 002.73-.73l.22-.39a2 2 0 00-.73-2.73l-.15-.08a2 2 0 01-1-1.74v-.5a2 2 0 011-1.74l.15-.09a2 2 0 00.73-2.73l-.22-.38a2 2 0 00-2.73-.73l-.15.08a2 2 0 01-2 0l-.43-.25a2 2 0 01-1-1.73V4a2 2 0 00-2-2z"
+                />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </header>
+      <navbar class="results-tabs container" id="results-tabs">
+        <div class="tabs-wrap">
+          <div class="results-tab active" data-type="all">All</div>
+          <div class="results-tab" data-type="images">Images</div>
+          <div class="results-tab" data-type="videos">Videos</div>
+          <div class="results-tab" data-type="news">News</div>
+        </div>
+        <div class="tools-wrap" id="tools-bar">
+          <button
+            class="variant--ghost tools-toggle"
+            id="tools-toggle"
+            type="button"
+          >
+            Date
+          </button>
+          <div class="tools-dropdown" id="tools-dropdown" style="display: none">
+            <button class="tools-menu-item" data-menu="time" type="button">
+              <span class="tools-menu-label">Time</span>
+              <div class="tools-menu-value-wrap">
+                <span class="tools-menu-value" id="tools-time-val"
+                  >Any time</span
+                >
+                <svg
+                  class="tools-menu-chevron"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </button>
+            <button class="tools-menu-item" data-menu="lang" type="button">
+              <span class="tools-menu-label">Language</span>
+              <div class="tools-menu-value-wrap">
+                <span class="tools-menu-value" id="tools-lang-val">Any</span>
+                <svg
+                  class="tools-menu-chevron"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div
+            class="tools-submenu"
+            id="tools-submenu-time"
+            style="display: none"
+          >
+            <button class="tools-option active" data-time="any">
+              Any time
+            </button>
+            <button class="tools-option" data-time="hour">Hour</button>
+            <button class="tools-option" data-time="day">24 hours</button>
+            <button class="tools-option" data-time="week">Week</button>
+            <button class="tools-option" data-time="month">Month</button>
+            <button class="tools-option" data-time="year">Year</button>
+            <button class="tools-option" data-time="custom">Custom...</button>
+            <div class="tools-custom-date" id="tools-custom-date">
+              <input
+                type="date"
+                id="tools-date-from"
+                class="tools-date-input"
+              />
+              <span class="tools-date-sep">to</span>
+              <input type="date" id="tools-date-to" class="tools-date-input" />
+              <button
+                type="button"
+                class="tools-date-apply"
+                id="tools-date-apply"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+          <div
+            class="tools-submenu"
+            id="tools-submenu-lang"
+            style="display: none"
+          >
+            <input
+              type="text"
+              class="tools-lang-filter"
+              id="tools-lang-filter"
+              placeholder="Filter languages..."
+              autocomplete="off"
+            />
+            <div class="tools-lang-list" id="tools-lang-list">
+              <button
+                type="button"
+                class="tools-option tools-lang-option active"
+                data-lang=""
+              >
+                Any language</button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="af"
+              >
+                Afrikaans <span class="tools-lang-code">af</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sq"
+              >
+                Albanian <span class="tools-lang-code">sq</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="am"
+              >
+                Amharic <span class="tools-lang-code">am</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ar"
+              >
+                Arabic <span class="tools-lang-code">ar</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="hy"
+              >
+                Armenian <span class="tools-lang-code">hy</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="az"
+              >
+                Azerbaijani <span class="tools-lang-code">az</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="bn"
+              >
+                Bangla <span class="tools-lang-code">bn</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="eu"
+              >
+                Basque <span class="tools-lang-code">eu</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="be"
+              >
+                Belarusian <span class="tools-lang-code">be</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="bs"
+              >
+                Bosnian <span class="tools-lang-code">bs</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="bg"
+              >
+                Bulgarian <span class="tools-lang-code">bg</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="my"
+              >
+                Burmese <span class="tools-lang-code">my</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ca"
+              >
+                Catalan <span class="tools-lang-code">ca</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="zh"
+              >
+                Chinese <span class="tools-lang-code">zh</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="hr"
+              >
+                Croatian <span class="tools-lang-code">hr</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="cs"
+              >
+                Czech <span class="tools-lang-code">cs</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="da"
+              >
+                Danish <span class="tools-lang-code">da</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="nl"
+              >
+                Dutch <span class="tools-lang-code">nl</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="en"
+              >
+                English <span class="tools-lang-code">en</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="eo"
+              >
+                Esperanto <span class="tools-lang-code">eo</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="et"
+              >
+                Estonian <span class="tools-lang-code">et</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="tl"
+              >
+                Filipino <span class="tools-lang-code">tl</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="fi"
+              >
+                Finnish <span class="tools-lang-code">fi</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="fr"
+              >
+                French <span class="tools-lang-code">fr</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="gl"
+              >
+                Galician <span class="tools-lang-code">gl</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ka"
+              >
+                Georgian <span class="tools-lang-code">ka</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="de"
+              >
+                German <span class="tools-lang-code">de</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="el"
+              >
+                Greek <span class="tools-lang-code">el</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="gu"
+              >
+                Gujarati <span class="tools-lang-code">gu</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="he"
+              >
+                Hebrew <span class="tools-lang-code">he</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="hi"
+              >
+                Hindi <span class="tools-lang-code">hi</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="hu"
+              >
+                Hungarian <span class="tools-lang-code">hu</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="is"
+              >
+                Icelandic <span class="tools-lang-code">is</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="id"
+              >
+                Indonesian <span class="tools-lang-code">id</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ga"
+              >
+                Irish <span class="tools-lang-code">ga</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="it"
+              >
+                Italian <span class="tools-lang-code">it</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ja"
+              >
+                Japanese <span class="tools-lang-code">ja</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="kn"
+              >
+                Kannada <span class="tools-lang-code">kn</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="kk"
+              >
+                Kazakh <span class="tools-lang-code">kk</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="km"
+              >
+                Khmer <span class="tools-lang-code">km</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ko"
+              >
+                Korean <span class="tools-lang-code">ko</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ku"
+              >
+                Kurdish <span class="tools-lang-code">ku</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ky"
+              >
+                Kyrgyz <span class="tools-lang-code">ky</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="lo"
+              >
+                Lao <span class="tools-lang-code">lo</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="lv"
+              >
+                Latvian <span class="tools-lang-code">lv</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="lt"
+              >
+                Lithuanian <span class="tools-lang-code">lt</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="lb"
+              >
+                Luxembourgish <span class="tools-lang-code">lb</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="mk"
+              >
+                Macedonian <span class="tools-lang-code">mk</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ms"
+              >
+                Malay <span class="tools-lang-code">ms</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ml"
+              >
+                Malayalam <span class="tools-lang-code">ml</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="mr"
+              >
+                Marathi <span class="tools-lang-code">mr</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="mn"
+              >
+                Mongolian <span class="tools-lang-code">mn</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ne"
+              >
+                Nepali <span class="tools-lang-code">ne</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="no"
+              >
+                Norwegian <span class="tools-lang-code">no</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="or"
+              >
+                Odia <span class="tools-lang-code">or</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ps"
+              >
+                Pashto <span class="tools-lang-code">ps</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="fa"
+              >
+                Persian <span class="tools-lang-code">fa</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="pl"
+              >
+                Polish <span class="tools-lang-code">pl</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="pt"
+              >
+                Portuguese <span class="tools-lang-code">pt</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="pa"
+              >
+                Punjabi <span class="tools-lang-code">pa</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ro"
+              >
+                Romanian <span class="tools-lang-code">ro</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ru"
+              >
+                Russian <span class="tools-lang-code">ru</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sr"
+              >
+                Serbian <span class="tools-lang-code">sr</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sd"
+              >
+                Sindhi <span class="tools-lang-code">sd</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="si"
+              >
+                Sinhala <span class="tools-lang-code">si</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sk"
+              >
+                Slovak <span class="tools-lang-code">sk</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sl"
+              >
+                Slovenian <span class="tools-lang-code">sl</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="so"
+              >
+                Somali <span class="tools-lang-code">so</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="st"
+              >
+                Southern Sotho <span class="tools-lang-code">st</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="es"
+              >
+                Spanish <span class="tools-lang-code">es</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sw"
+              >
+                Swahili <span class="tools-lang-code">sw</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="sv"
+              >
+                Swedish <span class="tools-lang-code">sv</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="tg"
+              >
+                Tajik <span class="tools-lang-code">tg</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ta"
+              >
+                Tamil <span class="tools-lang-code">ta</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="te"
+              >
+                Telugu <span class="tools-lang-code">te</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="th"
+              >
+                Thai <span class="tools-lang-code">th</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="tr"
+              >
+                Turkish <span class="tools-lang-code">tr</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="tk"
+              >
+                Turkmen <span class="tools-lang-code">tk</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="uk"
+              >
+                Ukrainian <span class="tools-lang-code">uk</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="ur"
+              >
+                Urdu <span class="tools-lang-code">ur</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="uz"
+              >
+                Uzbek <span class="tools-lang-code">uz</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="vi"
+              >
+                Vietnamese <span class="tools-lang-code">vi</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="cy"
+              >
+                Welsh <span class="tools-lang-code">cy</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="xh"
+              >
+                Xhosa <span class="tools-lang-code">xh</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="yi"
+              >
+                Yiddish <span class="tools-lang-code">yi</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="yo"
+              >
+                Yoruba <span class="tools-lang-code">yo</span></button
+              ><button
+                type="button"
+                class="tools-option tools-lang-option"
+                data-lang="zu"
+              >
+                Zulu <span class="tools-lang-code">zu</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </navbar>
+
+      <main class="container results-layout">
+        <div class="plugins">
+          <div id="slot-above-results" data-position="above-results"></div>
+          <hr />
+        </div>
+        <div class="results">
+          <div id="results-list"></div>
+        </div>
+        <aside>
+          <div
+            id="slot-above-sidebar"
+            class="results-slot results-slot--sidebar"
+            data-position="above-sidebar"
+          ></div>
+          <div id="at-a-glance"></div>
+          <div
+            id="slot-below-sidebar"
+            class="results-slot results-slot--sidebar"
+            data-position="below-sidebar"
+          ></div>
+        </aside>
+        <div class="media">
+          <div class="media-preview-panel" id="media-preview-panel">
+            <div class="media-preview-header">
+              <div class="button-group">
+                <button
+                  class="variant--icon media-preview-nav media-preview-prev"
+                  id="media-preview-prev"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  class="variant--icon media-preview-nav media-preview-next"
+                  id="media-preview-next"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <button
+                class="variant--icon media-preview-close"
+                id="media-preview-close"
+              >
+                ×
+              </button>
+            </div>
+            <div class="media-preview-img-wrap">
+              <img
+                class="media-preview-img"
+                id="media-preview-img"
+                src=""
+                alt=""
+              />
+            </div>
+            <div class="media-preview-info" id="media-preview-info"></div>
+          </div>
+        </div>
+        <div id="results-sidebar"></div>
+        <div id="pagination"></div>
+        <div
+          id="slot-below-results"
+          class="results-slot results-slot--below"
+          data-position="below-results"
+        ></div>
+      </main>
+
+      <footer class="home-footer" id="home-footer">
+        <div class="container">
+          <a class="logo" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="681.448"
+              height="171.111"
+              viewBox="0 0 681.448 171.111"
+              fill="currentColor"
+            >
+              <g
+                id="Group_3"
+                data-name="Group 3"
+                transform="translate(-615.622 -470.689)"
+              >
+                <path
+                  id="Path_2"
+                  data-name="Path 2"
+                  d="M80.711,36.8H68.889L8.622-132.533H21.067ZM149.178-85.6l-2.756,8.622H118.867v57.333a7.078,7.078,0,0,0,2.933,5.778,19.607,19.607,0,0,0,6.8,3.422,24.613,24.613,0,0,0,6.622,1.111,26.914,26.914,0,0,0,6.089-.756,44.257,44.257,0,0,0,4.933-1.378h1.6v5.511q-1.778,1.067-5.467,2.889A54.319,54.319,0,0,1,133.711.222a37.9,37.9,0,0,1-10.756,1.467A34.91,34.91,0,0,1,110.511-.4,19.875,19.875,0,0,1,101.8-6.489a15.023,15.023,0,0,1-3.2-9.689v-60.8H84.733v-5.156a58.7,58.7,0,0,0,8.044-2.4A11.943,11.943,0,0,0,98.2-88.578q2-2.711,2.267-7.956l.622-10.933,17.778-3.022V-85.6ZM356.115-11.289a12.8,12.8,0,0,1,3.911-9.467,13.022,13.022,0,0,1,9.511-3.867A13.066,13.066,0,0,1,379-20.756a12.729,12.729,0,0,1,3.956,9.467A12.815,12.815,0,0,1,379-1.911a12.917,12.917,0,0,1-9.467,3.956,12.873,12.873,0,0,1-9.511-3.956A12.887,12.887,0,0,1,356.115-11.289ZM399.781,0V-4.711l9.067-2.667a5.4,5.4,0,0,0,2.978-1.867,5.1,5.1,0,0,0,1.022-3.2V-114.489a5.081,5.081,0,0,0-1.2-3.6,10.691,10.691,0,0,0-4.222-2.356l-8.178-2.933v-3.556l33.867-7.378V-43.2L466.8-77.689l-10.667-3.733v-4.711H491.6v4.711L482-78.578a12.89,12.89,0,0,0-3.911,2,26.969,26.969,0,0,0-3.022,2.533L454.893-55.2l30.133,44a10.09,10.09,0,0,0,2.667,2.711,13.917,13.917,0,0,0,4,1.822l6.4,1.956V0H456.137V-4.711l8.444-2.844L441.293-42.489l-8.178,5.244v24.8A4.588,4.588,0,0,0,434.226-9.2a7,7,0,0,0,2.889,1.822l7.467,2.667V0ZM524.6-106.756a12.922,12.922,0,0,1-6.622-1.733,12.937,12.937,0,0,1-4.711-4.667,12.685,12.685,0,0,1-1.733-6.578,12.1,12.1,0,0,1,3.822-8.978,12.746,12.746,0,0,1,9.244-3.733,13.113,13.113,0,0,1,9.467,3.733,12.033,12.033,0,0,1,3.867,8.978,12.441,12.441,0,0,1-1.778,6.578,13.185,13.185,0,0,1-4.8,4.667A13.334,13.334,0,0,1,524.6-106.756ZM501.937,0V-4.711l9.511-2.667a5.337,5.337,0,0,0,2.889-1.778,4.965,4.965,0,0,0,1.111-3.289V-68.356a6.332,6.332,0,0,0-1.2-3.911,8.841,8.841,0,0,0-4.311-2.667l-7.644-2.756v-3.556l33.422-6.667v75.467a4.754,4.754,0,0,0,1.111,3.289,6.138,6.138,0,0,0,2.889,1.778l8.711,2.667V0Zm54.956,0V-4.711l9.067-2.667A5.509,5.509,0,0,0,568.937-9.2a5.059,5.059,0,0,0,1.022-3.244v-101.6A6.7,6.7,0,0,0,568.8-118a7.947,7.947,0,0,0-4.267-2.622l-8.178-2.756v-3.556l33.867-7.378V-12.444a4.753,4.753,0,0,0,1.111,3.289,6.138,6.138,0,0,0,2.889,1.778l8,2.667V0ZM690.07,36.8H678.248L617.981-132.533h12.444Z"
+                  transform="translate(607 605)"
+                />
+                <path
+                  id="Path_3"
+                  data-name="Path 3"
+                  d="M2.335-72v3.85l8.015,2.335a4.436,4.436,0,0,1,2.114,1.357,3.48,3.48,0,0,1,.852,2.367V5.059a3.607,3.607,0,0,1-.884,2.461A4.128,4.128,0,0,1,10.35,8.845L2.335,11.117v3.85H40.328A62.57,62.57,0,0,0,57.21,13.074,27.287,27.287,0,0,0,67.466,8.056a17.21,17.21,0,0,0,5.112-6.942,21.6,21.6,0,0,0,1.452-7.731,20.786,20.786,0,0,0-3.187-11.865,24.427,24.427,0,0,0-7.794-7.479A37.682,37.682,0,0,0,54.276-29.9L44.62-36.784,30.356-32.871l.5,6a8.746,8.746,0,0,1,2.114-.379q1.736-.189,3.692-.284t2.966-.095a13.3,13.3,0,0,1,8.52,2.651,15.993,15.993,0,0,1,4.986,6.816A23.55,23.55,0,0,1,54.78-9.457q0,9.214-4.228,13.411t-11.928,4.2H31.24V-62.092a3.965,3.965,0,0,1,.726-2.43,3.422,3.422,0,0,1,1.988-1.294l9.34-2.335V-72ZM91.2-72H71a19.077,19.077,0,0,0-6,.757,8.745,8.745,0,0,0-3.755,2.493,39.685,39.685,0,0,0-3.44,4.639L39.066-34.575l15.778,5.743L76.428-60.766a15.836,15.836,0,0,1,3.029-3.092,10.539,10.539,0,0,1,3.6-2.083L91.2-68.15Z"
+                  transform="translate(764 591)"
+                />
+                <path
+                  id="Path_4"
+                  data-name="Path 4"
+                  d="M27.378,1.778A22.277,22.277,0,0,1,15.333-1.467a22.364,22.364,0,0,1-8.044-8.578A24,24,0,0,1,4.444-21.511,22.908,22.908,0,0,1,8.489-35.289,31.694,31.694,0,0,1,18.756-44.4a48.023,48.023,0,0,1,13.156-5.067,58.768,58.768,0,0,1,12.8-1.556q1.067,0,3.244.178t4.311.356q2.133.178,3.289.178l.089-14.133q.089-8.622-2.489-11.422t-8.978-2.8A22.868,22.868,0,0,0,36.267-77.2a44.188,44.188,0,0,0-7.733,3.733Q24.8-71.2,21.556-68.844t-5.733,4.133H13.333L10.044-80.8a70.815,70.815,0,0,1,8.622-3.733,72.483,72.483,0,0,1,10.756-2.933,64.324,64.324,0,0,1,12.444-1.156A50.03,50.03,0,0,1,57.689-86a28.924,28.924,0,0,1,13.156,8.756q5.244,6.133,5.067,16.8l-.533,45.067A5.163,5.163,0,0,0,77.2-11.244q1.822,1.556,5.556,1.556a21.892,21.892,0,0,0,3.289-.444q2.4-.444,4.267-.889h1.422V-5.6a33.381,33.381,0,0,1-4.978,2.978A52.521,52.521,0,0,1,79.378.444a24.163,24.163,0,0,1-7.644,1.333q-7.378,0-11.911-3.067T55.289-12.711A30.264,30.264,0,0,1,46.044-3.2,29.823,29.823,0,0,1,36.133.844,46.7,46.7,0,0,1,27.378,1.778Zm11.644-12a25.066,25.066,0,0,0,8.8-1.733,15.3,15.3,0,0,0,7.556-6.267l.178-26.311a57.178,57.178,0,0,0-15.822,1.956,21.045,21.045,0,0,0-10.4,6.178q-3.644,4.222-3.644,10.978,0,5.778,2.044,9.111A11.586,11.586,0,0,0,32.844-11.6,14.953,14.953,0,0,0,39.022-10.222Z"
+                  transform="translate(854 605)"
+                />
+                <path
+                  id="Path_5"
+                  data-name="Path 5"
+                  d="M14.66-22.048,9.517-24a36.231,36.231,0,0,1,2.9-5.7,33.49,33.49,0,0,1,4.345-5.616A21.753,21.753,0,0,1,22.433-39.6,14.5,14.5,0,0,1,29.26-41.26a21.246,21.246,0,0,1,7.6,1.271A42.212,42.212,0,0,1,43-37.092q2.808,1.626,5.5,2.9a13.188,13.188,0,0,0,5.7,1.271A7.685,7.685,0,0,0,60.53-35.88,54.462,54.462,0,0,0,65.5-43.565L70.638-41.5a40.243,40.243,0,0,1-2.985,5.734,33.116,33.116,0,0,1-4.374,5.616,22.486,22.486,0,0,1-5.616,4.256,14.158,14.158,0,0,1-6.768,1.655,21.246,21.246,0,0,1-7.6-1.271,43.592,43.592,0,0,1-6.177-2.9q-2.837-1.626-5.556-2.9a13.381,13.381,0,0,0-5.734-1.271,7.7,7.7,0,0,0-6.354,2.926A49.723,49.723,0,0,0,14.66-22.048Z"
+                  transform="translate(857 527)"
+                />
+              </g>
+            </svg>
+          </a>
+          <div class="home-footer-bottom">
+            <a
+              href="https://github.com/fccview/degoog/releases/tag/__APP_VERSION__"
+              target="_blank"
+              rel="noopener"
+            >
+              DEGOOG version
+              <span class="home-footer-version">__APP_VERSION__</span>
+            </a>
+            <a
+              href="https://github.com/Arkmind/trankil"
+              target="_blank"
+              rel="noopener"
+            >
+              Trankil Repository
+            </a>
+            <a href="/settings" target="_blank" rel="noopener">Settings</a>
+            <a
+              href="https://fccview.github.io/degoog/"
+              target="_blank"
+              rel="noopener"
+              >Documentation</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // No CSS implementation for sticky header detection atm (at least not cross browser)
+      const el = document.querySelector(".media");
+      window.addEventListener("scroll", () => {
+        const stickyTop = parseInt(window.getComputedStyle(el).top);
+        const currentTop = el.getBoundingClientRect().top;
+        el.classList.toggle("is-pinned", currentTop === stickyTop);
+      });
+    </script>
+    <script type="module" src="/public/app.js?v=0.10.0"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div
+  class="currency-widget"
+  data-from="{{fromCode}}"
+  data-to="{{toCode}}"
+  data-rate="{{rate}}"
+>
+  <div class="currency-header">{{amount}} {{fromName}} equals</div>
+  <div class="currency-result">{{convertedAmount}} {{toName}}</div>
+  <div class="currency-meta">Frankfurter · European Central Bank</div>
+  <div class="currency-inputs">
+    <div class="currency-row">
+      <input
+        class="currency-from-input"
+        type="text"
+        inputmode="decimal"
+        value="{{amount}}"
+        aria-label="Amount in {{fromCode}}"
+      />
+      <div class="currency-select-wrap">
+        <select class="currency-from-select" aria-label="From currency">
+          <option value="{{fromCode}}">{{fromCode}} – {{fromName}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-row">
+      <input
+        class="currency-to-input"
+        type="text"
+        inputmode="decimal"
+        value="{{convertedAmount}}"
+        aria-label="Amount in {{toCode}}"
+      />
+      <div class="currency-select-wrap">
+        <select class="currency-to-select" aria-label="To currency">
+          <option value="{{toCode}}">{{toCode}} – {{toName}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

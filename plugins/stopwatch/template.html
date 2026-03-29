@@ -1,0 +1,143 @@
+<div
+  id="timer-widget"
+  class="timer-widget"
+  data-duration="{{duration}}"
+  data-mode="{{mode}}"
+  data-autostart="{{autostart}}"
+>
+  <div class="timer-header">
+    <div class="timer-tabs">
+      <button class="timer-tab" id="timer-tab-timer" data-tab="timer">
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Timer
+      </button>
+      <button class="timer-tab" id="timer-tab-stopwatch" data-tab="stopwatch">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+        Stopwatch
+      </button>
+    </div>
+
+    <div class="timer-header-actions">
+      <button
+        class="timer-icon-btn"
+        id="timer-sound-btn"
+        data-action="toggle-sound"
+        aria-label="Sound off"
+        aria-pressed="false"
+        title="Sound off"
+      >
+        <!-- muted icon — JS swaps it when enabled -->
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+          <line x1="23" y1="9" x2="17" y2="15" />
+          <line x1="17" y1="9" x2="23" y2="15" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="timer-body">
+    <div class="timer-circle-wrap">
+      <svg class="timer-svg" viewBox="0 0 120 120" aria-hidden="true">
+        <circle
+          class="timer-track"
+          cx="60"
+          cy="60"
+          r="54"
+          fill="none"
+          stroke-width="4.5"
+        />
+        <circle
+          class="timer-progress"
+          cx="60"
+          cy="60"
+          r="54"
+          fill="none"
+          stroke-width="4.5"
+          stroke-linecap="round"
+          id="timer-progress-arc"
+        />
+      </svg>
+      <div class="timer-display-wrap">
+        <span id="timer-display" class="timer-display" title="Click to edit"
+          >0:00</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="timer-footer">
+    <button
+      class="timer-action-btn"
+      id="timer-play-pause-btn"
+      data-action="toggle-play"
+      aria-label="Start"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <polygon points="5,3 19,12 5,21" />
+      </svg>
+    </button>
+    <button
+      class="timer-action-btn"
+      id="timer-reset-btn"
+      data-action="reset"
+      aria-label="Reset"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+        <path d="M3 3v5h5" />
+      </svg>
+    </button>
+  </div>
+</div>
